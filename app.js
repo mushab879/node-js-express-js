@@ -1,7 +1,12 @@
+const path = require('path');
 const fs = require('fs');
-fs.readFile('file.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data); 
-});
 
-console.log("This runs immediately, without waiting for file");
+const filePath = path.join(__dirname, 'file.txt'); 
+
+fs.readFile(filePath, 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading file:', err);
+    return;
+  }
+  console.log(data);
+});
