@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 // Route to read file.txt
 app.get('/file', (req, res) => {
-  const filePath = path.join(__dirname, 'data', 'file.txt');
+  const filePath = path.join(__dirname,  'file.txt');
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) return res.status(500).send('Error reading file.');
     res.send(`<pre>${data}</pre>`);
