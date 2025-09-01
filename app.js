@@ -31,6 +31,9 @@ app.get('/file', (req, res) => {
     res.send(`<pre>${data}</pre>`);
   });
 });
+app.get('/api/user', (req, res) => {
+  res.json({ name: "My Name is Mushab👨", role: "Iam a Developer🖥️" });
+});
 
 
 // Use Render’s dynamic port
